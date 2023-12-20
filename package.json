@@ -1,12 +1,48 @@
 {
   "name": "file-converter",
   "version": "1.0.0",
-  "description": "",
+  "description": "File Converter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "electron main.js",
+    "build": "electron-builder -w"
   },
-  "keywords": [],
+  "build": {
+    "appId": "file-converter",
+    "productName": "File Converter",
+    "copyright": "Copyright © 2023 Lait-Ahh",
+    "files": [
+      "app/",
+      "assets/",
+      "build/",
+      "LICENSE",
+      "main.js",
+      "preload.js",
+      "ffmpeg.exe",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "target": ["appx"],
+      "icon": "build/appx/StoreLogo.png",
+      "signingHashAlgorithms": [
+        "sha1",
+        "sha256"
+      ],
+      "legalTrademarks": "Copyright © 2023 Lait-Ahh",
+      "publisherName": "Lait-Ahh"
+    },
+    "appx": {
+      "identityName": "",
+      "publisher": "",
+      "publisherDisplayName": "Lait-Ahh",
+      "applicationId": "FileConverter",
+      "displayName": "File Converter"
+    }
+  },
+  "keywords": ["file", "files", "converter"],
   "author": "",
   "license": "ISC",
   "dependencies": {
